@@ -13,7 +13,7 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-//user selected a drink, go to order page
+  //user selected a drink, go to order page
   void goToOrderPage(Drink drink) {
     //navigate to order page
     Navigator.push(
@@ -35,14 +35,11 @@ class _ShopPageState extends State<ShopPage> {
           child: Column(
             children: [
               //heading
-              // ignore: prefer_const_constructors
-              Text(
+              const Text(
                 "YAMARI",
-                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 40,
-                  fontFamily: 'Shrikhand'
-                  ),
+                ),
               ),
 
               const SizedBox(
@@ -52,7 +49,7 @@ class _ShopPageState extends State<ShopPage> {
               //list of drinks for sale
               Expanded(
                 child: ListView.builder(
-                  itemCount: Drink.length,
+                  itemCount: value.shop.length,
                   itemBuilder: (context, index) { 
                     //get individual drink from shop
                     var individualDrink = value.shop[index];
@@ -61,14 +58,11 @@ class _ShopPageState extends State<ShopPage> {
                     return DrinkTile(
                       drink: individualDrink,
                       onTap: () => goToOrderPage(individualDrink),
-                      // ignore: prefer_const_constructors
-                      trailing: Icon(Icons.arrow_forward),
+                      trailing: const Icon(Icons.arrow_forward),
                     );
                   },
                 ),
               )
-
-
             ],
           ),
         ),

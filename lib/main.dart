@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
       create: (context) => Yamari(),
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.amber),
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+        fontFamily: 'SourGummy',
+      ),
+
         home: const HomePage(),
       ),
     );
